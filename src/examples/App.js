@@ -31,16 +31,15 @@ const App = () => {
         <MaskedInputPhone
           onChange={handleChange}
           phone
-          fullWidth
           className={classes.root}
           name='phone'
+          lang='uz'
           label='Phone number'
           placeholder='Enter phone number'
         />
         <MaskedInputCode
           onChange={handleChange}
           otp
-          fullWidth
           className={classes.root}
           name='code'
           incorrect={errorCode}

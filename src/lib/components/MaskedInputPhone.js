@@ -44,7 +44,7 @@ const MaskedInputPhone = ({
   const inputProps = {
     label,
     variant,
-    fullWidth,
+    fullWidth: !!fullWidth,
     placeholder,
     mask,
     className: `${className} ${error && 'error'}`,

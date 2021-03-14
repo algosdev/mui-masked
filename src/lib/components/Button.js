@@ -15,9 +15,10 @@ function Button({
 }) {
   return (
     <button
-      className={className}
+      className={`${className} mui-masked-button`}
       onClick={onClick}
       id={id}
+      disabled={isLoading}
       type={type || 'submit'}
       style={{ backgroundColor: backgroundColor, color: color }}
     >
@@ -35,7 +36,6 @@ function Button({
   )
 }
 Button.propTypes = {
-  name: PropTypes.string,
   isLoading: PropTypes.boolean,
   success: PropTypes.string,
   type: PropTypes.string,

@@ -59,13 +59,14 @@ const MaskedInputCode = ({
   const inputProps = {
     label,
     variant,
-    fullWidth,
+    fullWidth: !!fullWidth,
     placeholder,
     mask,
     className: `${className} ${error && 'error'}`,
     name,
     id,
     required,
+    type: 'tel',
   }
   const maskProps = {
     mask,
