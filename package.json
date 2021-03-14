@@ -1,9 +1,10 @@
 {
   "name": "mui-masked",
-  "version": "0.0.1",
+  "version": "0.0.34",
   "main": "dist/index",
   "module": "dist/index",
   "typings": "dist/index",
+  "type": "module",
   "files": [
     "dist"
   ],

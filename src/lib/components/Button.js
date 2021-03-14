@@ -1,5 +1,4 @@
 import React from 'react'
-import './style.css'
 import PropTypes from 'prop-types'
 import { CircularProgress } from '@material-ui/core'
 function Button({
