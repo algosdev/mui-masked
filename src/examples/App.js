@@ -39,7 +39,6 @@ const App = () => {
           lang='uz'
           label='Phone number'
           placeholder='Enter phone number'
-          noError
         />
         <MaskedInputCode
           onChange={handleChange}
