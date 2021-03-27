@@ -1,16 +1,34 @@
 {
   "name": "mui-masked",
-  "version": "0.0.41",
+  "version": "0.0.42",
   "main": "dist/index",
   "module": "dist/index",
   "typings": "dist/index",
   "files": [
     "dist"
   ],
+  "author": {
+    "name": "Samandar",
+    "email": "samandar149official@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/algosdev/mui-masked.git"
+  },
+  "keywords": [
+    "masked",
+    "mui",
+    "input",
+    "phone",
+    "material",
+    "button"
+  ],
   "devDependencies": {
     "@babel/cli": "^7.12.16",
     "@babel/preset-react": "^7.12.13",
     "@material-ui/core": ">4.11.2",
+    "babel-plugin-styled-components": "^1.12.0",
     "prop-types": ">14.7.0",
     "react": ">16.8",
     "react-dom": ">16.8",
@@ -43,5 +61,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "dependencies": {
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "styled-components": "^5.2.1",
+    "typescript": "^4.2.3"
   }
 }

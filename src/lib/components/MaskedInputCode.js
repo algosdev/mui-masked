@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react'
 import InputMask from 'react-input-mask'
 import { TextField } from '@material-ui/core'
 import PropTypes from 'prop-types'
+import { ErrorText } from '../styled'
 const generateMaskForCode = (length) => {
   let mask = ''
-  for (var i = 0; i < length; i++) {
+  for (let i = 0; i < length; i++) {
     if (i === length - 1) {
       mask += `9`
     } else {
@@ -62,9 +63,10 @@ const MaskedInputCode = ({
     fullWidth: !!fullWidth,
     placeholder,
     mask,
-    className: `${className} ${error && 'error'}`,
+    className,
     name,
     id,
+    error,
     required,
     type: 'tel',
   }
@@ -95,9 +97,7 @@ const MaskedInputCode = ({
       <InputMask {...maskProps}>
         {() => <TextField {...inputProps} />}
       </InputMask>
-      {error && (
-        <div className='error_message'>{errorMessages?.[lang]?.[error]}</div>
-      )}
+      <ErrorText>{error && errorMessages?.[lang]?.[error]}</ErrorText>
     </>
   )
 }

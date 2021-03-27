@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core'
-import { MaskedInputPhone, MaskedInputCode, Button, isValidForm } from '../lib'
+import {
+  MaskedInputPhone,
+  MaskedInputCode,
+  MaskedButton,
+  isValidForm,
+} from '../lib'
 const useStyles = makeStyles(() => ({
-  root: {
-    margin: '10px 0',
-  },
+  root: {},
 }))
 const App = () => {
   const classes = useStyles()
@@ -36,6 +39,7 @@ const App = () => {
           lang='uz'
           label='Phone number'
           placeholder='Enter phone number'
+          noError
         />
         <MaskedInputCode
           onChange={handleChange}
@@ -47,7 +51,7 @@ const App = () => {
           label='OTP'
           placeholder='Enter one time password'
         />
-        <Button
+        <MaskedButton
           color='#fff'
           backgroundColor='rgb(73, 167, 255)'
           circleColor='white'

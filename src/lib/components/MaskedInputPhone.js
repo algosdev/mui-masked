@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import InputMask from 'react-input-mask'
 import { TextField } from '@material-ui/core'
 import PropTypes from 'prop-types'
+import { ErrorText } from '../styled'
 const MaskedInputPhone = ({
   placeholder,
   label,
@@ -11,6 +12,7 @@ const MaskedInputPhone = ({
   onChange,
   required = true,
   name,
+  noError,
   className,
   id,
   lang = 'en',
@@ -40,20 +42,8 @@ const MaskedInputPhone = ({
       setError(false)
     }
   }
-  const mask = `+\\9\\9\\8 99 999 99 99`
-  const inputProps = {
-    label,
-    variant,
-    fullWidth: !!fullWidth,
-    placeholder,
-    mask,
-    className: `${className} ${error && 'error'}`,
-    name,
-    id,
-    required,
-  }
   const maskProps = {
-    mask,
+    mask: `+\\9\\9\\8 99 999 99 99`,
     value,
     maskChar,
     onBlur: (e) => {
@@ -67,14 +57,27 @@ const MaskedInputPhone = ({
         }
       : '',
   }
-
+  const inputProps = {
+    label,
+    variant,
+    fullWidth: !!fullWidth,
+    placeholder,
+    mask: `+\\9\\9\\8 99 999 99 99`,
+    className,
+    name,
+    error: noError ? false : error,
+    id,
+    required,
+  }
   return (
     <>
       <InputMask {...maskProps}>
         {() => <TextField {...inputProps} />}
       </InputMask>
-      {error && (
-        <div className='error_message'>{errorMessages?.[lang]?.[error]}</div>
+      {!noError ? (
+        <ErrorText>{error && errorMessages?.[lang]?.[error]}</ErrorText>
+      ) : (
+        ''
       )}
     </>
   )

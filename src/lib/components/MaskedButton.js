@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { CircularProgress } from '@material-ui/core'
-function Button({
+import { Button } from '../styled'
+function MaskedButton({
   isLoading,
-  success,
   type,
   className,
   onClick,
@@ -14,25 +14,30 @@ function Button({
   id,
 }) {
   return (
-    <button
-      className={`${className} mui-masked-button`}
+    <Button
+      className={`${className}`}
       onClick={onClick}
       id={id}
       disabled={isLoading}
       type={type || 'submit'}
-      style={{ backgroundColor: backgroundColor, color: color }}
+      style={{
+        backgroundColor: backgroundColor,
+        color: color,
+        height: '42px',
+        width: '120px',
+      }}
     >
       {isLoading ? (
         <span
           className='circular_progress_container'
           style={{ color: circleColor }}
         >
-          <CircularProgress color='inherit' size={24} />
+          <CircularProgress color='inherit' size={20} />
         </span>
       ) : (
-        success || inner
+        inner
       )}
-    </button>
+    </Button>
   )
 }
 Button.propTypes = {
@@ -46,4 +51,4 @@ Button.propTypes = {
   circleColor: PropTypes.string,
   color: PropTypes.string,
 }
-export default Button
+export default MaskedButton

@@ -1,4 +1,4 @@
-.mui-masked-button {
+/* .mui-masked-button {
   height: 46px;
   width: 100%;
   border: 0;
@@ -8,15 +8,8 @@
   color: #fff;
   font-size: 16px;
 }
-.error fieldset, .error label{
+.error fieldset,
+.error label {
   border-color: red;
   color: red;
-}
-.MuiTextField-root.error {
-  margin-bottom: 5px;
-}
-.error_message {
-  font-size: 12px;
-  color: red;
-  margin-bottom: 5px;
-}
+} */
